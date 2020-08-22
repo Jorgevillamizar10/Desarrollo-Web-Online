@@ -1,0 +1,664 @@
+/*reglas
+selectores
+declaraciones
+propiedades
+valores*/
+
+/* Selector de Etiqueta header-section-article-nav */
+/*
+header{
+    background: pink ;
+    color: red;
+}
+*/
+
+/*Selector descendente
+body header div nav ol li a {
+    // para trabajar con todas las a en esa parte del codigo
+    //Pueden variar eso depende de las etiquetas que tenga bajando
+    //el figure no cuenta
+}
+*/
+/*selector de clase
+    .portafolio
+    .link
+*/
+
+/* Selector de id
+    #portafolio
+*/
+/*
+colores en hexadecimal
+gris oscuro = #1d252c
+gris claro = #626262
+background girs = #1b2127
+celeste = #026fff
+*/
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?ybz68n');
+    src:  url('../fonts/icomoon.eot?ybz68n#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?ybz68n') format('truetype'),
+      url('../fonts/icomoon.woff?ybz68n') format('woff'),
+      url('../fonts/icomoon.svg?ybz68n#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon--menu:before {
+    content: "\e900";
+  }
+  
+
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+}
+
+
+ h1,h2,h3,h4,h5,h6{
+     font-family: 'Fjalla One',sans-serif;
+     font-weight: normal;
+    /* font-style: italic; */
+ }
+
+ h1{
+     font-size: 40px;
+     line-height:1.5;
+     letter-spacing: -.2px;
+     color:white;
+    /* funciona como un reloj -> parametros -> margin: top right bottom left;*/
+    margin: 0; 
+    /*margin: 100px 520px 70px 30px;*/
+     /*text-transform: uppercase;*/
+     /*text-decoration: dashed;*/
+ }
+/*para que las palabras que estan dentro del strong lleven color diferente*/
+ h1 strong{
+     color: #026fff;
+ }
+
+ h2{
+    color: #026fff;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 40px;
+ }
+
+.hero{
+    height: 300px;
+    /* con ../ me salgo de la carpeta de CSS para entrar en imagenes*/
+    /*background-image: url('../imagenes/hero.jpg');*/
+    background-color:  #1b2127;
+    /* funcion en CSS para ajustar el tamaño de la imagen*/
+    /*background-size: 500px 300px;*/
+    /*para que no se me repita la imagen */
+   /* background-repeat: no-repeat;*/
+    /*para que la imagen se me mueva del lado izquierdo al derecho en x*/
+    /*background-position-x: right;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-image{
+    /*arregla dimensiones de la imagen*/
+    object-fit: cover;
+}
+
+.portfolio{
+    background: #fafafa;
+    padding: 20px;
+}
+
+.project{
+    /*para hacer bordes en nuestras partes de la pagina 
+    diferentes colores para cada borde
+    border-top:10px solid red ;
+    border-right:10px solid green ;
+    border-left:10px solid orange ;
+    border-bottom:10px solid pink ;
+    */
+    /*para que todos los bordes sean del mismo color y otra manera:
+    border-top-color: red;
+    border-width: 15px;
+    border-style: solid;*/
+
+    border: 1px solid gray;
+    /*para que se me vea el borde redondeado*/
+    border-radius: 10px;
+    /*border-top-left-radius: 50px;*/
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 20px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project-course,.project-date,.project-url{
+    margin: 10px 0;
+}
+
+.project-description{
+    font-size: 20px;
+}
+
+.project strong{
+    font-family: 'Fjalla One',sans-serif;
+}
+
+.project-title{
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+ .project-details{
+    width: 50%;
+}
+
+.project-imageContainer{
+    width: 50%;
+}
+.project-imageContainer img{
+    max-width: 100%;
+}
+
+.header{
+    background-color: #1b2127;
+    color: white;
+    display:flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+ol,ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+figure{
+    margin: 0;
+}
+
+/* para cambiarle el color al enlace pero solo en el header y no a los demas enlaces */
+.header a{
+    color: white;
+    /*para eliminar el underscore*/
+     text-decoration: none; 
+    display: flex;
+    align-items: center;
+    height: inherit;
+    padding: 0 10px;
+}
+
+.menu{
+    height: inherit;
+}
+
+.header ol{
+   display: flex; 
+   height: inherit;
+   height: inherit;
+}
+
+.header ol li{
+    height: inherit;
+    align-items: center;
+    display: flex;
+}
+
+.flexbox{
+display: flex;
+/*flex-direction: column;*/
+/*para que no se me vaya mas alla en los laterales en la pagina las cajitas*/
+flex-wrap: wrap;
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid red;
+    /*para no alterar el tamaño de las box*/
+    flex-shrink: 0;
+}
+
+.footer{
+    background-color: #1b2127;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer img{
+    vertical-align: middle;
+}
+
+.footer a{
+    color: white;
+}
+
+.event{
+    flex-wrap: wrap;
+    /*border: 1px solid red;*/
+    margin: 1%;
+    width: 48%;
+    /*para que la imagen se ajuste al borde*/
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f4fbff;
+    /* background: green; */
+    
+}
+
+.event-list{
+    /*para que me quede uno al lado del otro el flex es muy importante*/
+    display: flex;
+    /*para que  no se me salga de la pagina a los costados*/
+    flex-wrap: wrap;
+
+}
+
+.event-img{
+    width: 480px;
+    height: 200px;
+    object-fit: cover;
+    
+}
+
+.event-list-title{
+    margin-left: 10px;
+}
+
+.event-detail{
+    margin: 20px 40px;
+    margin-top: -40px;
+    background-color: white;
+    position: relative;
+    padding: 20px;
+    /*alinea texto*/
+    text-align: center;
+  
+}
+
+.event-description{
+    text-align: left;
+}
+
+.event-url{
+    border: 1px solid #056fff;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #056fff;
+}
+
+.contacto{
+    background-color: #056fff;
+    color: white;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.social{
+    /*border: 1px solid red;*/
+}
+
+.social-link{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    /*border: 1px solid white;*/
+    background-size: 50px 50px;
+    margin: 0 10px;
+}
+
+/*Otra manera de llamar clases dentro de las mismas clases con un '.'*/
+.social-link.twitter{
+    background-image: url('../imagenes/twitter.svg');
+}
+
+.social-link.facebook{
+    background-image: url('../imagenes/facebook.svg');
+ 
+}
+.social-link.github{
+    background-image: url('../imagenes/github.svg');
+   
+}
+.social-link.instagram{
+    background-image: url('../imagenes/instagram.svg');
+  
+}
+
+.form-email input{
+    border-color: gray;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px 20px 10px 25px;
+    background-image: url('../imagenes/envelope.svg');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+}
+
+.form-email button{
+    display: block;
+    margin-top: 10px;
+    background: transparent;
+    color: white;
+    padding: 5px 0;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 10px;
+   /* margin: 10px auto 0;*/
+}
+
+.form-email h3{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container{
+   /*  border: 1px solid red;*/
+     max-width: 1000px;
+     /*width: 100%;*/
+     flex: 1;
+     margin: 0 auto;
+     /*para que no me afecte el flex se le heredan al padre estos atributos
+     esto para centrar nuestro website */
+     display: inherit;
+     justify-content: inherit;
+     align-items: inherit;
+     height: inherit;
+     flex-wrap: inherit;
+}
+
+.html-video{
+    width: 100%;
+    height: auto;
+    /* max-width: 100%; */
+}
+
+.burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.8);
+    /*display none para que no se me vea al menos que lo active con un display block o flex*/
+    display: none;
+    /*para centrar usando el display block o none pd: con el display flex es mas facil*/
+    line-height: 40px;
+    text-align: center;
+    /*Para incluirlo dentro del Head*/
+    position: fixed;
+    /*el fixed para que se mantenga fijo cuando me muevo*/
+    z-index: 4;
+    /*z-index para que me pase por encima de todo sin que se me borre al bajar*/
+    left: 5px;
+    top: 5px;
+    /*color al menu hamburguesa*/
+    color: white;
+}
+
+
+/* desktop first que empieces desde el media querie mas grabde*/
+ @media screen and (max-width: 1023px){
+    .event-list-title{
+      margin-left: 0;  
+    }
+
+   .portfolio{
+       padding: 0;
+   }
+   
+    .container{
+       padding: 0 1em;
+   }
+   .hero{
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 2em;
+}
+
+.hero-image{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+h1{
+    font-size: 2em;
+    z-index: 2;
+}
+} 
+
+.youtube-video{
+    /* width: 100%;
+    height: auto; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: 3; */
+}
+
+.flexible-video{
+    width: 100%;
+    height: 0;
+    /*Para el padding se multiplica el alto por 100/ el ancgo h*100/w* las medidas del video*/
+    padding-top: 56.25%;
+    background: blue;
+    position: relative;
+}
+
+@media screen and (max-width: 767px){
+
+    h2{
+        font-size: 1.2em;
+        margin: .5em 0;
+    }
+
+    .burger-button{
+        /*para que solo se muestre cuando estamos en pantallas menores a 768px*/
+        display: block;
+    }
+
+   .header{
+       display:block;
+       height: auto;
+   }
+   .header ol{
+       display: block;
+   }
+   .header ol li{
+       height: 50px;
+   }
+   .header a {
+          /* display: block;  */
+        text-align: center; 
+         justify-content: center; 
+         height: 40px;
+         font-size: 2em;
+         text-decoration: underline;
+         margin-bottom: .5em;
+     
+   }
+   .header .logo{
+       text-align: center;
+   }
+
+   .menu{
+       /*para que nos persiga por toda la pagina*/
+       position: fixed;
+       /*si le agrego el 'a' al 'rgb' me deja incluir otro parametro es para que se vea un poco transparente el background*/
+       background:rgba(5,111,255,.8);
+       /*3 para que este abajo del burguer button OJO el B button es 4*/
+       z-index: 3;
+       /*0 para pegarlo a la izquierda y al top arriba */
+       top: 0;
+       /*para esconder el menu*/
+        left: -100vw; 
+       /*hace que mi elemento se estire una opcion para cuando no nos deja centrar lo que queremos con el flex*/
+       bottom: 0;
+       /*vw-> vieport w me da el 100%*/
+       width: 100vw;
+       /* vh->vieport hight es como colocar 100%*/
+       /* height: 100vh; */
+       /*para centrarlo todo*/
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       /*animacion para mi menu cuando lo llamo*/
+       transition: .3s;
+   }
+   /*para invocar un elemento con dos clases se hace de esta manera con los dos puntos*/
+   .menu.is-active{
+       /*como una bandera*/
+    left: 0;
+   }
+
+   .project{
+       display: block;
+   }
+   .project-imageContainer{
+       width: auto;
+       text-align: center;
+   }
+   .project-details{
+       width: auto;
+       font-size: 16px;
+   }
+   .project-title{
+       font-size: 1.5em;
+       margin-bottom: .3em;
+   }
+   .project-url{
+       font-size: 1em;
+   }
+   .project-course{
+       font-size: .9em;
+   }
+   .project-date{
+        font-size: 1em;
+   }
+   .project-description{
+        font-size: 1em;
+   }
+
+   .project-course, .project-date, .project-url{
+       margin: .3em 0;
+   }
+
+   .event{
+       width: auto;
+       flex-shrink: initial;
+   }
+
+   .event img{
+       width: 100%;
+   }
+
+}
+
+ @media screen and (max-width: 480px){
+     h1{
+         font-size: 1.5em;
+     }
+    .project-details{
+        /* width: auto; */
+        font-size: 14.5px;
+    }
+
+    .event-detail{
+        /* 1em=16px */
+        margin: -2px .5em .5em;
+        padding: 1em;
+    }
+
+    .contacto{
+        height: auto;
+        padding: 1em 0;
+        text-align: center;
+        display: block;
+    }
+
+    .form-email button{
+        margin: 1em auto;
+    }
+
+    .form-email h3{
+        margin-top: 0;
+    }
+
+    .footer{
+        display: block;
+        text-align: center;
+        /* padding: 1px; */
+        border: 1px solid transparent;
+    }
+
+    .social-link{
+        width: 40px;
+        height: 40px;
+        /*me toma x y y como 40 si pongo el background de esta manera*/
+        background-size: 40px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .project-details{
+        width: auto;
+        font-size: 12px;
+    }
+
+    h1{
+        font-size: 1.2em;
+        background: rgba(0, 0,0, .5);
+    }
+
+    .hero{
+        padding: 2em 1em;
+    }
+} 
